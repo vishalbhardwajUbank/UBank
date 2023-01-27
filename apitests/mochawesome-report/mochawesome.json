@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-27T03:51:30.942Z",
+    "end": "2023-01-27T03:51:34.626Z",
+    "duration": 3684,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aeb1cb22-a18d-4c15-b19f-d27fdd7e235b",
+      "title": "",
+      "fullFile": "C:\\Users\\Vishal\\Desktop\\UI_API_Tests\\apitests\\test\\users.js",
+      "file": "\\test\\users.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6905bb0f-d76f-4f4f-8945-1ee160f0a800",
+          "title": "Pet API",
+          "fullFile": "C:\\Users\\Vishal\\Desktop\\UI_API_Tests\\apitests\\test\\users.js",
+          "file": "\\test\\users.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST new pet to the store",
+              "fullTitle": "Pet API POST new pet to the store",
+              "timedOut": false,
+              "duration": 957,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await api.post('/pet')\n    .send(data)\n    .expect(200)\ndataId = response.body.id;\nexpect(response.body).to.have.property('id');\nexpect(response.body.name).to.equal(data.name);\nexpect(response.body.status).to.equal(data.status);\nconsole.log(response.body);",
+              "err": {},
+              "uuid": "c57ca6ef-af90-42b6-bfd1-f02d105e86ae",
+              "parentUUID": "6905bb0f-d76f-4f4f-8945-1ee160f0a800",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "find pet by id",
+              "fullTitle": "Pet API find pet by id",
+              "timedOut": false,
+              "duration": 903,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await api.get(`/pet/${dataId}`)\n    .expect(200)\nexpect(response.body).to.have.property('id');\nexpect(response.body.name).to.equal(data.name);\nexpect(response.body.status).to.equal(data.status);",
+              "err": {},
+              "uuid": "29b2124c-4b9b-47a2-8a3d-fda4e57e24ba",
+              "parentUUID": "6905bb0f-d76f-4f4f-8945-1ee160f0a800",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update pet name",
+              "fullTitle": "Pet API update pet name",
+              "timedOut": false,
+              "duration": 904,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "data.name = faker.animal.cat();\nconsole.log(dataId);\nconst response = await api.put('/pet')\n    .send(data)\n    .expect(200)\nexpect(response.body).to.have.property('id');\nexpect(response.body.name).to.equal(data.name);\nexpect(response.body.status).to.equal(data.status);",
+              "err": {},
+              "uuid": "b6a9e354-ba5c-456d-8221-3ad356541dcf",
+              "parentUUID": "6905bb0f-d76f-4f4f-8945-1ee160f0a800",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete a pet",
+              "fullTitle": "Pet API delete a pet",
+              "timedOut": false,
+              "duration": 901,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await api.delete(`/pet/${dataId}`).set('api_key','special-key')\n    .expect(200)\nexpect(response.body.message).to.equal(`${dataId}`);",
+              "err": {},
+              "uuid": "890b1b61-ca61-48f0-9b8b-3d6e13f4c75f",
+              "parentUUID": "6905bb0f-d76f-4f4f-8945-1ee160f0a800",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c57ca6ef-af90-42b6-bfd1-f02d105e86ae",
+            "29b2124c-4b9b-47a2-8a3d-fda4e57e24ba",
+            "b6a9e354-ba5c-456d-8221-3ad356541dcf",
+            "890b1b61-ca61-48f0-9b8b-3d6e13f4c75f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3665,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

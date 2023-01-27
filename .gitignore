@@ -1,0 +1,7 @@
+node_modules
+cypress\videos\*.feature.mp4
+cypress\reports\cucumber-html\cucumber-report.html
+cypress\screenshots\*.feature\*.png
+apitests\node_modules
+apitests\mochawesome-report\mochawesome.html
+cucumber-messages.ndjson

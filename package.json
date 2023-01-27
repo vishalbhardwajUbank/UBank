@@ -1,0 +1,26 @@
+{
+  "name": "cypress-automation-framework",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-headless-chrome": "cypress run --browser chrome --spec 'cypress/e2e/*.feature'"
+  },
+  "author": "Vishal B",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^10.10.0",
+    "prettier": "2.8.3",
+    "ts-loader": "^9.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    }
+  }
+}
