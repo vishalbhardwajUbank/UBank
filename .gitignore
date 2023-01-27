@@ -5,3 +5,4 @@ cypress\screenshots\*.feature\*.png
 apitests\node_modules
 apitests\mochawesome-report\mochawesome.html
 cucumber-messages.ndjson
+UBank git url.txt
